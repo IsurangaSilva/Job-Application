@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">MAD Dev</string>
+
+    <!-- For Sign Up -->
+    <string name="sign_up">Sign Up</string>
+    <string name="Uname">Username</string>
+    <string name="Password">Password</string>
+    <string name="Email">Email</string>
+    <string name="Select">Select Item</string>
+    <string name="Btn_Signup">Continue</string>
+    <string name="Signup_text1">Already signed in ?</string>
+    <string name="Signup_text2">Login</string>
+
+    <!-- For Login -->
+    <string name="Log_in">Login</string>
+    <string name="Btn_login">Login</string>
+    <string name="Login_text1">Not signed in yet ?</string>
+    <string name="Login_text2">Sign up</string>
+
+    <!-- For Admin Homepage -->
+    <string name="Admin_Title">Dashboard</string>
+    <string name="Admin_text_1">Users</string>
+    <string name="Admin_text_2">Companies</string>
+    <string name="Admin_text_3">Advertisers</string>
+    <string name="Admin_text_4">App Stats</string>
+
+    <!-- For Admin Users -->
+    <string name="Advertiser_Users_Title">Users</string>
+    <string name="S1">Sample User 1</string>
+    <string name="S2">Sample User 2</string>
+    <string name="S3">Sample User 3</string>
+    <string name="Ad_Users_edit_btn">Edit</string>
+    <string name="Ad_Users_delete_btn">Delete</string>
+
+    <!-- For Admin Companies -->
+    <string name="Advertiser_Company_Title">Companies</string>
+    <string name="C1">Sample Company 1</string>
+    <string name="C2">Sample Company 2</string>
+    <string name="C3">Sample Company 3</string>
+
+    <!-- For Admin Performance -->
+    <string name="Admin_Performance_Title">Performance</string>
+    <string name="Ad_revenue_value">362</string>
+    <string name="Ad_revenue">Total Jobs</string>
+    <string name="Users_value">125</string>
+    <string name="Users">Users</string>
+    <string name="Companies_value">50</string>
+    <string name="Companies">Companies</string>
+    <string name="Recent_users">New Users</string>
+    <string name="Recent_users_value">23</string>
+    <string name="Recent_companies">New Companies</string>
+    <string name="Recent_companies_value">8</string>
+    <string name="Advertiser_Update_Title" />
+
+</resources>
