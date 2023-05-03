@@ -9,6 +9,7 @@
     <string name="Select">Select Item</string>
     <string name="Btn_Signup">Continue</string>
     <string name="Signup_text1">Already signed in ?</string>
+
     <string name="Signup_text2">Login</string>
 
     <!-- For Login -->
