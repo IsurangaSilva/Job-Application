@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="@string/bottomNavbar_home" />
+
+    <item
+        android:id="@+id/jobs"
+        android:icon="@drawable/baseline_work_24"
+        android:title="@string/bottomNavbar_jobs" />
+
+    <item
+        android:id="@+id/post"
+        android:icon="@drawable/baseline_post_add_24"
+        android:title="@string/bottomNavbar_post" />
+
+
+    <item
+        android:id="@+id/feedback"
+        android:icon="@drawable/baseline_feedback_24"
+        android:title="@string/bottomNavbar_feedback" />
+
+</menu>
