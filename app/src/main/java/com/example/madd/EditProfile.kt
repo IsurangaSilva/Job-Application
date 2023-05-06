@@ -1,20 +1,16 @@
 package com.example.madd
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
+import android.view.View
+import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
 
-class Edit_ProfileFragment : Fragment() {
 
-
-
+class EditProfile : AppCompatActivity() {
 
     private lateinit var etEmpName: EditText
     private lateinit var etEmpJobTitle: EditText
@@ -26,33 +22,28 @@ class Edit_ProfileFragment : Fragment() {
     private lateinit var btnSaveData: Button
     private lateinit var dbRef: DatabaseReference
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val view = inflater.inflate(R.layout.fragment_edit__profile, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_edit_profile)
 
-        etEmpName = view.findViewById(R.id.editTextTextPersonName)
-        etEmpJobTitle = view.findViewById(R.id.editTextTextPersonName4)
-        etEmpEducation = view.findViewById(R.id.editTextTextPersonName2)
-        etEmpAddress = view.findViewById(R.id.editTextTextPostalAddress2)
-        etEmpPhone = view.findViewById(R.id.editTextPhone)
-        etEmpEmail = view.findViewById(R.id.editTextTextEmailAddress)
-        etEmpAbout = view.findViewById(R.id.editTextTextPersonName3)
+        etEmpName = findViewById(R.id.editTextTextPersonName)
+        etEmpJobTitle = findViewById(R.id.editTextTextPersonName4)
+        etEmpEducation = findViewById(R.id.editTextTextPersonName2)
+        etEmpAddress = findViewById(R.id.editTextTextPostalAddress2)
+        etEmpPhone = findViewById(R.id.editTextPhone)
+        etEmpEmail = findViewById(R.id.editTextTextEmailAddress)
+        etEmpAbout = findViewById(R.id.editTextTextPersonName3)
 
-        btnSaveData = view.findViewById(R.id.button123)
+        btnSaveData = findViewById(R.id.button123)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Employees")
 
         btnSaveData.setOnClickListener {
-            saveEmployeeData()
+            savePostData()
         }
-
-        return view
     }
 
-    private fun saveEmployeeData() {
-
+    private fun savePostData() {
         //getting values
         val empName = etEmpName.text.toString()
         val empJobTitle = etEmpJobTitle.text.toString()
@@ -64,34 +55,40 @@ class Edit_ProfileFragment : Fragment() {
 
         if (empName.isEmpty()) {
             etEmpName.error = "Please enter name"
+            return
         }
         if (empJobTitle.isEmpty()) {
             etEmpJobTitle.error = "Please enter age"
+            return
         }
         if (empEducation.isEmpty()) {
             etEmpEducation.error = "Please enter salary"
+            return
         }
         if (empAddress.isEmpty()) {
             etEmpAddress.error = "Please enter name"
+            return
         }
         if (empPhone.isEmpty()) {
             etEmpPhone.error = "Please enter age"
+            return
         }
         if (empEmail.isEmpty()) {
             etEmpEmail.error = "Please enter salary"
+            return
         }
         if (empAbout.isEmpty()) {
             etEmpAbout.error = "Please enter salary"
+            return
         }
-
 
         val empId = dbRef.push().key!!
 
-        val employee = EmployeModel(empId, empName, empJobTitle, empEducation,empAddress,empPhone,empEmail,empAbout)
+        val employeModel = EmployeModel(empId, empName, empJobTitle, empEducation,empAddress,empPhone,empEmail,empAbout)
 
-        dbRef.child(empId).setValue(employee)
+        dbRef.child(empId).setValue(employeModel)
             .addOnCompleteListener {
-                Toast.makeText(requireContext(), "Data inserted successfully", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG).show()
 
                 etEmpName.text.clear()
                 etEmpJobTitle.text.clear()
@@ -100,12 +97,9 @@ class Edit_ProfileFragment : Fragment() {
                 etEmpPhone.text.clear()
                 etEmpEmail.text.clear()
                 etEmpAbout.text.clear()
-
-            }.addOnFailureListener { err ->
-                Toast.makeText(requireContext(), "Error ${err.message}", Toast.LENGTH_LONG).show()
             }
-
+            .addOnFailureListener { err ->
+                Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
+            }
     }
-
 }
-

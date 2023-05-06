@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/home"
-        android:icon="@drawable/baseline_home_24"
-        android:title="@string/bottomNavbar_home" />
+        android:id="@+id/Posts"
+        android:icon="@drawable/baseline_post_add_24"
+        android:title="Post" />
 
     <item
         android:id="@+id/jobs"
@@ -12,14 +12,17 @@
         android:title="@string/bottomNavbar_jobs" />
 
     <item
-        android:id="@+id/post"
-        android:icon="@drawable/baseline_post_add_24"
-        android:title="@string/bottomNavbar_post" />
-
-
-    <item
         android:id="@+id/feedback"
         android:icon="@drawable/baseline_feedback_24"
         android:title="@string/bottomNavbar_feedback" />
+
+
+    <item
+        android:id="@+id/Settings"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="More" />
+
+
+
 
 </menu>
