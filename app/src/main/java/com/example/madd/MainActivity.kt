@@ -30,31 +30,41 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        val firebase : DatabaseReference = FirebaseDatabase.getInstance().getReference()
+
 
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        replaceFragment(HomeFragment())
-
-        binding.bottomNavigationView.setOnItemSelectedListener {
-            when (it.itemId) {
-
-                R.id.home -> replaceFragment2(HomeFragment(), it.title.toString())
-                R.id.post -> replaceFragment2(Add_postFragment(), it.title.toString())
-                R.id.feedback -> replaceFragment2(FeedbackFragment(), it.title.toString())
-
-                else -> {
 
 
+        binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.Posts -> {
+                    val intent = Intent(this, Post_Management::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.Settings -> {
+                    val intent = Intent(this, MoreActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.feedback -> {
+                    val intent = Intent(this, EditProfile::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.Posts -> {
+                    val intent = Intent(this, Add_Post::class.java)
+                    startActivity(intent)
+                    true
                 }
 
+                else -> {
+                    false
+                }
             }
-
-            true
-
         }
-
 
         drawerLayout = findViewById(R.id.drawerLayout)
         val navigationView: NavigationView = findViewById(R.id.nav_view)
@@ -69,19 +79,7 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        navigationView.setNavigationItemSelectedListener {
 
-            it.isChecked = true
-            when (it.itemId) {
-
-                R.id.nav_profile -> replaceFragment2(FetchingFragment(), it.title.toString())
-                R.id.nav_editProfile -> replaceFragment2(Edit_ProfileFragment(), it.title.toString())
-                R.id.nav_addImage -> replaceFragment2(Edit_ImageFragment(), it.title.toString())
-                R.id.nav_remove -> replaceFragment2(RemoveFragment(), it.title.toString())
-                R.id.nav_logout -> replaceFragment2(LogoutFragment(), it.title.toString())
-            }
-            true
-        }
 
 
 
@@ -89,25 +87,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun replaceFragment(fragment : Fragment) {
-
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout, fragment)
-        fragmentTransaction.commit()
-
-    }
-
-    private fun replaceFragment2(fragment : Fragment,title: String){
-
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout,fragment)
-        fragmentTransaction.commit()
-        drawerLayout.closeDrawers()
-        setTitle(title)
-
-    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)){
             return true
