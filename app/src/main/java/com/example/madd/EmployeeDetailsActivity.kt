@@ -38,7 +38,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         etEmpAbout = findViewById(R.id.textView22)
 
         btnUpdate = findViewById(R.id.update12)
-        btnDelete = findViewById(R.id.delete12)
+
     }
 
     private fun setValuesToViews() {

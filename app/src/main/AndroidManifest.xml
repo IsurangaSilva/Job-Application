@@ -14,8 +14,23 @@
         tools:targetApi="31">
         <activity
 
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".MoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Post_Management"
+            android:exported="false" />
+        <activity
+            android:name=".Add_Post"
+            android:exported="false" />
+        <activity
+
+
             android:name=".EditCompanyUsers"
             android:exported="false" />
+
 
             android:name=".PostDetailsActivity"
             android:exported="false" />
