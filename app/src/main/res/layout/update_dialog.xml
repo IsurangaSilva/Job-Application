@@ -6,9 +6,12 @@
     android:padding="10dp">
 
     <EditText
+
         android:id="@+id/etEmpEmail"
         android:layout_width="match_parent"
         android:layout_height="61dp"
+        android:id="@+id/etEmpName"
+        android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:hint="Employee Name"
         android:inputType="textPersonName" />
@@ -20,7 +23,53 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Employee Age" />
+        android:id="@+id/etEmpJobTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="JobTitle" />
 
+    <EditText
+        android:id="@+id/etEmpEducation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Education"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/etEmpAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/etEmpPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Phone"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/etEmpEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/etEmpAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="About"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btnUpdateData"
