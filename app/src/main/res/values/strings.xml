@@ -34,12 +34,14 @@
     <string name="S3">Sample User 3</string>
     <string name="Ad_Users_edit_btn">Edit</string>
     <string name="Ad_Users_delete_btn">Delete</string>
+    <string name="Edit_users">Edit User</string>
 
     <!-- For Admin Companies -->
     <string name="Advertiser_Company_Title">Companies</string>
     <string name="C1">Sample Company 1</string>
     <string name="C2">Sample Company 2</string>
     <string name="C3">Sample Company 3</string>
+    <string name="Edit_company">Edit Company</string>
 
     <!-- For Admin Performance -->
     <string name="Admin_Performance_Title">Performance</string>
