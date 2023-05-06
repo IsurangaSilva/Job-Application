@@ -9,12 +9,12 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/baseline_person_24"
-            android:title="@string/drawer_profile"/>
+            android:icon="@drawable/baseline_settings_24"
+            android:title="Settings"/>
         <item
             android:id="@+id/nav_editProfile"
-            android:icon="@drawable/baseline_edit_24"
-            android:title="@string/drawer_edit"/>
+            android:icon="@drawable/baseline_person_24"
+            android:title="Add Information"/>
         <item
             android:id="@+id/nav_addImage"
             android:icon="@drawable/baseline_image_24"
