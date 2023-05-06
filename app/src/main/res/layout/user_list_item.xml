@@ -26,36 +26,22 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/imageView26"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="-151dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="-170dp"
             android:src="@drawable/icon_5" />
 
         <TextView
             android:id="@+id/textView39"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="45dp"
             android:layout_toEndOf="@+id/imageView33"
             android:text="@string/S1"
             android:textColor="@color/white"
             android:textSize="@dimen/Name" />
 
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="111dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView39"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="194dp"
-            android:layout_marginTop="39dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="90dp"
-            android:layout_toEndOf="@+id/imageView33"
-            android:backgroundTint="@color/btn_orange"
-            android:text="@string/Ad_Users_delete_btn"
-            android:textSize="@dimen/Btn_name" />
 
     </RelativeLayout>
 

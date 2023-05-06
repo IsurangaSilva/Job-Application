@@ -13,10 +13,9 @@
         android:theme="@style/Theme.MADD"
         tools:targetApi="31">
         <activity
-
             android:name=".EditCompanyUsers"
             android:exported="false" />
-
+        <activity
             android:name=".PostDetailsActivity"
             android:exported="false" />
         <activity
@@ -34,12 +33,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -48,13 +41,6 @@
         <activity
             android:name=".SignUp"
             android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
         <activity
             android:name=".AdminUsers"
             android:exported="true">
@@ -75,12 +61,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".AdminCompany"
@@ -95,6 +75,11 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

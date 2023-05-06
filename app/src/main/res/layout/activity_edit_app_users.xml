@@ -9,7 +9,7 @@
         android:id="@+id/imageView15"
         android:layout_width="@dimen/Title_card_width"
         android:layout_height="@dimen/Title_card_height"
-        android:layout_marginBottom="484dp"
+        android:layout_marginBottom="532dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:backgroundTint="@color/btn_orange"
         android:text="Update"
         app:layout_constraintEnd_toStartOf="@+id/btnDelete"
         app:layout_constraintHorizontal_bias="0.5"
@@ -44,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:backgroundTint="@color/btn_orange"
         android:text="Delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -58,7 +60,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
-        android:layout_marginTop="250dp">
+        android:layout_marginTop="300dp">
 
 
         <LinearLayout
@@ -83,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Emp id"
+                    android:text="User id:"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -131,7 +133,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Emp Name"
+                    android:text="User Name:"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -180,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Emp Age"
+                    android:text="User Email:"
                     android:textColor="@color/black"
                     android:textSize="15sp"
 
@@ -212,58 +214,7 @@
         </LinearLayout>
 
 
-        <LinearLayout
 
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:orientation="horizontal"
-            android:weightSum="2"
-
-            >
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.6">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-
-                    android:gravity="center"
-                    android:text="Emp Salary"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-
-
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.4">
-
-                <TextView
-                    android:id="@+id/tvEmpSalary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-
-                    />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
 
 
     </LinearLayout>

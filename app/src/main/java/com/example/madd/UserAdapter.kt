@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class UserAdapter (private val empList: ArrayList<AppUsersModel>):
+class UserAdapter (private val empList: ArrayList<EmployeModel>):
     RecyclerView.Adapter<UserAdapter.ViewHolder>(){
 
     private lateinit var mListener: onItemClickListener
@@ -28,7 +28,7 @@ class UserAdapter (private val empList: ArrayList<AppUsersModel>):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentEmp = empList[position]
-        holder.textView39.text = currentEmp.uEmail
+        holder.textView39.text = currentEmp.empName
         Log.d("UserAdapter", "EmpList size: ${empList.size}")
     }
 
