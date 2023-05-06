@@ -59,7 +59,7 @@
             android:minHeight="48dp"
             android:textSize="@dimen/Enter_details"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.212"
+            app:layout_constraintHorizontal_bias="0.234"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -89,41 +89,18 @@
             app:layout_constraintStart_toEndOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.076"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4"
-            app:srcCompat="@drawable/icon_4" />
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="213dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
-            android:backgroundTint="#A53C3C"
-            android:contentDescription="@string/Select"
-            android:visibility="visible"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
-
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="48dp"
             android:backgroundTint="@color/btn_blue"
             android:text="@string/Btn_Signup"
             android:textSize="@dimen/Btn_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
 
         <TextView
             android:id="@+id/textView2"

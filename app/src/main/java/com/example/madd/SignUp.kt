@@ -10,7 +10,6 @@ import com.example.madd.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUp : AppCompatActivity() {
-    private val users = arrayOf("User", "Company")
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
@@ -45,26 +44,6 @@ class SignUp : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
 
-            }
-
-        }
-
-
-        val spinner = findViewById<Spinner>(R.id.spinner)
-        val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, users)
-        spinner.adapter = arrayAdapter
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                //Toast.makeText(applicationContext, "selected player is: " + users[position], Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
 
         }

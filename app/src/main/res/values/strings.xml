@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MAD Dev</string>
+    <string name="app_name">BizConnect</string>
     <string name="open">open</string>
     <string name="close">close</string>
 
@@ -9,7 +9,7 @@
     <string name="Password">Password</string>
     <string name="Email">Email</string>
     <string name="Select">Select Item</string>
-    <string name="Btn_Signup">Continue</string>
+    <string name="Btn_Signup">Sign Up</string>
     <string name="Signup_text1">Already signed in ?</string>
 
     <string name="Signup_text2">Login</string>
@@ -45,18 +45,21 @@
 
     <!-- For Admin Performance -->
     <string name="Admin_Performance_Title">Performance</string>
-    <string name="Ad_revenue_value">362</string>
+    <string name="Ad_revenue_value">0</string>
     <string name="Ad_revenue">Total Jobs</string>
-    <string name="Users_value">125</string>
+    <string name="Users_value">0</string>
     <string name="Users">Users</string>
-    <string name="Companies_value">50</string>
+    <string name="Companies_value">0</string>
     <string name="Companies">Companies</string>
     <string name="Recent_users">New Users</string>
-    <string name="Recent_users_value">23</string>
+    <string name="Recent_users_value">0</string>
     <string name="Recent_companies">New Companies</string>
-    <string name="Recent_companies_value">8</string>
+    <string name="Recent_companies_value">0</string>
     <string name="Advertiser_Update_Title" />
 
+    <!-- Custom Toast Messages -->
+    <string name="Employee_Delete_Toast">Deletion Successful</string>
+    <string name="Employee_Update_Toast">Update Successful</string>
 
     //Post Fragment
     <string name="add_post">ADD A POST</string>

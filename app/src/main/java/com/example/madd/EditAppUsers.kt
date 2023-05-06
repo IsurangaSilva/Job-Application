@@ -54,11 +54,16 @@ class EditAppUsers : AppCompatActivity() {
     }
 
     private fun deleteRecord(id: String){
-        val dbRef = FirebaseDatabase.getInstance().getReference("AppUsers").child(id)
+        val dbRef = FirebaseDatabase.getInstance().getReference("Employees").child(id)
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener{
-            Toast.makeText(this, "Employee data deleted", Toast.LENGTH_LONG).show()
+            val inflater = layoutInflater
+            val layout = inflater.inflate(R.layout.employee_delete_toast, findViewById(R.id.toast_layout))
+            val toast = Toast(applicationContext)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = layout
+            toast.show()
 
             val intent = Intent(this, AdminUsers::class.java)
             finish()
@@ -71,7 +76,7 @@ class EditAppUsers : AppCompatActivity() {
     private fun openUpdateDialog(empId: String, empName: String){
         val mDialog = AlertDialog.Builder(this)
         val inflater = layoutInflater
-        val mDialogView = inflater.inflate(R.layout.update_dialog, null)
+        val mDialogView = inflater.inflate(R.layout.admin_update_dialog, null)
 
         mDialog.setView(mDialogView)
         val etEmpName = mDialogView.findViewById<EditText>(R.id.etEmpEmail)
@@ -81,7 +86,7 @@ class EditAppUsers : AppCompatActivity() {
         etEmpName.setText(intent.getStringExtra("empName").toString())
         etEmpAge.setText(intent.getStringExtra("empAge").toString())
 
-        mDialog.setTitle("Updating $empName Record")
+        mDialog.setTitle("Updating $empName")
 
         val alertDialog = mDialog.create()
         alertDialog.show()
@@ -93,7 +98,12 @@ class EditAppUsers : AppCompatActivity() {
                 etEmpAge.text.toString()
             )
 
-            Toast.makeText(applicationContext, "Employee Data Updated", Toast.LENGTH_LONG).show()
+            val inflater = layoutInflater
+            val layout = inflater.inflate(R.layout.employee_update_toast, findViewById(R.id.toast_update_layout))
+            val toast = Toast(applicationContext)
+            toast.duration = Toast.LENGTH_LONG
+            toast.view = layout
+            toast.show()
 
             tvEmpName.text = etEmpName.text.toString()
             tvEmpAge.text = etEmpAge.text.toString()
@@ -103,8 +113,8 @@ class EditAppUsers : AppCompatActivity() {
     }
 
     private fun updateEmpData(id: String, name: String, age: String){
-        val dbRef = FirebaseDatabase.getInstance().getReference("AppUsers").child(id)
-        val empInfo = AppUsersModel(id, name, age)
+        val dbRef = FirebaseDatabase.getInstance().getReference("Employees").child(id)
+        val empInfo = EmployeModel(id, name, age)
         dbRef.setValue(empInfo)
     }
 

@@ -11,7 +11,7 @@ import com.google.firebase.database.*
 class AdminUsers : AppCompatActivity() {
 
     private lateinit var userRecyclerView: RecyclerView
-    private lateinit var empList: ArrayList<AppUsersModel>
+    private lateinit var empList: ArrayList<EmployeModel>
     private lateinit var dbRef: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,20 +21,20 @@ class AdminUsers : AppCompatActivity() {
         userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.setHasFixedSize(true)
 
-        empList = arrayListOf<AppUsersModel>()
+        empList = arrayListOf<EmployeModel>()
         getEmployeesData()
     }
 
     private fun getEmployeesData(){
         userRecyclerView.visibility = View.GONE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("AppUsers")
+        dbRef = FirebaseDatabase.getInstance().getReference("Employees")
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 empList.clear()
                 if (snapshot.exists()){
                     for (empSnap in snapshot.children){
-                        val empData = empSnap.getValue(AppUsersModel::class.java)
+                        val empData = empSnap.getValue(EmployeModel::class.java)
                         empList.add(empData!!)
                     }
                     val mAdapter = UserAdapter(empList)
@@ -45,9 +45,9 @@ class AdminUsers : AppCompatActivity() {
                             val intent = Intent(this@AdminUsers, EditAppUsers::class.java)
 
                             //put extras
-                            intent.putExtra("empId", empList[position].userId)
-                            intent.putExtra("empName", empList[position].uEmail)
-                            intent.putExtra("empAge", empList[position].uPassword)
+                            intent.putExtra("empId", empList[position].empId)
+                            intent.putExtra("empName", empList[position].empName)
+                            intent.putExtra("empAge", empList[position].empEmail)
                             startActivity(intent)
                         }
 

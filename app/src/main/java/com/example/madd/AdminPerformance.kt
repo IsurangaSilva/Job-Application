@@ -11,7 +11,9 @@ import kotlin.concurrent.timerTask
 
 class AdminPerformance : AppCompatActivity() {
     private lateinit var dbRef: DatabaseReference
+    private lateinit var dbRef2: DatabaseReference
     private var totalUsers: Long = 0
+    private var totalCompanies: Long = 0
     private lateinit var timer: Timer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,13 +21,28 @@ class AdminPerformance : AppCompatActivity() {
 
         var newTotalUsers: Long = 0
         var prevTotal: Long = 0
+        var newTotalCompanies: Long = 0
+        var prevCompanyTotal: Long = 0
 
-        dbRef = FirebaseDatabase.getInstance().getReference("AppUsers")
+        dbRef = FirebaseDatabase.getInstance().getReference("Employees")
+        dbRef2 = FirebaseDatabase.getInstance().getReference("Company")
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 totalUsers = dataSnapshot.childrenCount
-                val textView9 = findViewById<TextView>(R.id.textView9)
-                textView9.text = "$totalUsers"
+                val textView11 = findViewById<TextView>(R.id.textView11)
+                textView11.text = "$totalUsers"
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e(TAG, "Failed to read value.", error.toException())
+            }
+        })
+
+        dbRef2.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                totalCompanies = dataSnapshot.childrenCount
+                val textView13 = findViewById<TextView>(R.id.textView13)
+                textView13.text = "$totalCompanies"
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -50,9 +67,23 @@ class AdminPerformance : AppCompatActivity() {
                 }
             })
 
+            dbRef2.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    newTotalCompanies = dataSnapshot.childrenCount
+                    val textView23 = findViewById<TextView>(R.id.textView23)
+                    var compDifference = newTotalCompanies - prevCompanyTotal
+                    prevCompanyTotal = newTotalCompanies
+                    textView23.text = "$compDifference"
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Log.e(TAG, "Failed to read value.", error.toException())
+                }
+            })
+
             // Update the total users count
 
-        }, 0 * 30 * 1000, 1 * 30 * 1000) // 5 minutes in milliseconds
+        }, 0 * 30 * 1000, 1 * 10 * 1000) // 5 minutes in milliseconds
 
     }
 
