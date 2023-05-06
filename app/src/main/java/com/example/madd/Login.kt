@@ -1,39 +1,67 @@
 package com.example.madd
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import com.example.madd.R
+import android.widget.Toast
+import com.example.madd.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
 
-    private val users = arrayOf("User", "Company")
+    private val users = arrayOf("User", "Company", "Admin")
+    private lateinit var binding: ActivityLoginBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var userType: Spinner
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val spinner2 = findViewById<Spinner>(R.id.spinner2)
-        val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, users)
+        val arrayAdapter =
+            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, users)
         spinner2.adapter = arrayAdapter
-        spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                //Toast.makeText(applicationContext, "selected player is: " + users[position], Toast.LENGTH_SHORT).show()
-            }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
+        userType = spinner2
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        binding.textView25.setOnClickListener {
+            val intent = Intent(this, SignUp::class.java)
+            startActivity(intent)
+        }
+
+        binding.button2.setOnClickListener {
+            val email = binding.editTextTextPersonName4.text.toString()
+            val pass = binding.editTextTextPersonName5.text.toString()
+            val uType = binding.spinner2.selectedItem.toString()
+
+            if (email.isNotEmpty() && pass.isNotEmpty()) {
+
+                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        val intent = when (uType) {
+                            "User" -> Intent(this, AdminUsers::class.java)
+                            "Company" -> Intent(this, AdminCompany::class.java)
+                            else -> Intent(this, AdminHome::class.java)
+                        }
+                        startActivity(intent)
+                    }
+                }
+
+
+            } else {
+                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+
             }
         }
+
+
+        }
     }
-}

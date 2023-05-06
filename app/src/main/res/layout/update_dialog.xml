@@ -6,14 +6,23 @@
     android:padding="10dp">
 
     <EditText
+
+        android:id="@+id/etEmpEmail"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
         android:id="@+id/etEmpName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="Employee Name"
         android:inputType="textPersonName" />
 
     <EditText
+        android:id="@+id/etEmpPassword"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Employee Age" />
         android:id="@+id/etEmpJobTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

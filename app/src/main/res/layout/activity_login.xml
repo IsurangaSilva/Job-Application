@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:srcCompat="@drawable/icon_1" />
@@ -56,7 +56,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="92dp"
         android:ems="10"
-        android:hint="@string/Uname"
+        android:hint="@string/Email"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textSize="@dimen/Enter_details"
@@ -124,14 +124,15 @@
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="44dp"
-        android:text="@string/Login_text2"
-        android:textColor="@color/btn_blue"
+        android:text="@string/sign_up"
+        android:textStyle="bold"
         android:textSize="@dimen/Sub_details"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
