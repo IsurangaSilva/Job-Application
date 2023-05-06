@@ -13,6 +13,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,9 +23,14 @@ class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
+        val firebase : DatabaseReference = FirebaseDatabase.getInstance().getReference()
 
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -34,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
 
                 R.id.home -> replaceFragment2(HomeFragment(), it.title.toString())
-                R.id.jobs -> replaceFragment2(JobFragment(), it.title.toString())
                 R.id.post -> replaceFragment2(Add_postFragment(), it.title.toString())
                 R.id.feedback -> replaceFragment2(FeedbackFragment(), it.title.toString())
 
@@ -68,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             it.isChecked = true
             when (it.itemId) {
 
-                R.id.nav_profile -> replaceFragment2(ProfileFragment(), it.title.toString())
+                R.id.nav_profile -> replaceFragment2(FetchingFragment(), it.title.toString())
                 R.id.nav_editProfile -> replaceFragment2(Edit_ProfileFragment(), it.title.toString())
                 R.id.nav_addImage -> replaceFragment2(Edit_ImageFragment(), it.title.toString())
                 R.id.nav_remove -> replaceFragment2(RemoveFragment(), it.title.toString())
