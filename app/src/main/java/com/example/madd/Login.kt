@@ -47,8 +47,10 @@ class Login : AppCompatActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
                         val intent = when (uType) {
+
                             "User" -> Intent(this, MainActivity::class.java)
-                            "Company" -> Intent(this, AdminCompany::class.java)
+                           
+                            "Company" -> Intent(this, Dashboard_company::class.java)
                             else -> Intent(this, AdminHome::class.java)
                         }
                         startActivity(intent)

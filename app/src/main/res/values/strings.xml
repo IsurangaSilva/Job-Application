@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">BizConnect</string>
+    <string name="title_activity_fetching">FetchingActivity</string>
     <string name="open">open</string>
     <string name="close">close</string>
 
