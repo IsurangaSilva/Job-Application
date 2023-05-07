@@ -3,8 +3,11 @@ package com.example.madd
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 
 class AdminHome : AppCompatActivity() {
 
@@ -12,6 +15,7 @@ class AdminHome : AppCompatActivity() {
     private lateinit var btnCompanies: Button
     private lateinit var btnPerformance: Button
     private lateinit var imageButton: ImageButton
+    private lateinit var mAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_home)
@@ -19,6 +23,8 @@ class AdminHome : AppCompatActivity() {
         btnFetchData = findViewById(R.id.button3)
         btnCompanies = findViewById(R.id.button4)
         btnPerformance = findViewById(R.id.button6)
+
+        mAuth = FirebaseAuth.getInstance()
         imageButton = findViewById(R.id.imageButton)
 
         btnFetchData.setOnClickListener{
@@ -36,9 +42,13 @@ class AdminHome : AppCompatActivity() {
             startActivity(intent)
         }
 
-        imageButton.setOnClickListener{
-            val intent = Intent(this, Login::class.java)
+
+        imageButton.setOnClickListener {
+            mAuth.signOut()
+            val intent = Intent(this@AdminHome, Login::class.java)
             startActivity(intent)
+            finish()
+            Toast.makeText(this@AdminHome, "Logout Successful !", Toast.LENGTH_SHORT).show()
         }
     }
 }

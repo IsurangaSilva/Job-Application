@@ -14,7 +14,7 @@
         android:layout_height="61dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="70dp"
-        android:hint="Employee Name"
+        android:hint="User Name"
         android:inputType="textPersonName" />
 
     <EditText
@@ -23,7 +23,7 @@
         android:layout_height="66dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Employee Age" />
+        android:hint="User Email" />
 
     <Button
         android:id="@+id/btnUpdateData"

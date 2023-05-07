@@ -46,7 +46,7 @@
     <!-- For Admin Performance -->
     <string name="Admin_Performance_Title">Performance</string>
     <string name="Ad_revenue_value">0</string>
-    <string name="Ad_revenue">Total Jobs</string>
+    <string name="Ad_revenue">Total Posts</string>
     <string name="Users_value">0</string>
     <string name="Users">Users</string>
     <string name="Companies_value">0</string>
