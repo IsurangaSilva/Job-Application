@@ -12,8 +12,10 @@ import kotlin.concurrent.timerTask
 class AdminPerformance : AppCompatActivity() {
     private lateinit var dbRef: DatabaseReference
     private lateinit var dbRef2: DatabaseReference
+    private lateinit var dbRef3: DatabaseReference
     private var totalUsers: Long = 0
     private var totalCompanies: Long = 0
+    private var totalPosts: Long = 0
     private lateinit var timer: Timer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,7 @@ class AdminPerformance : AppCompatActivity() {
 
         dbRef = FirebaseDatabase.getInstance().getReference("Employees")
         dbRef2 = FirebaseDatabase.getInstance().getReference("Company")
+        dbRef2 = FirebaseDatabase.getInstance().getReference("Posts")
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 totalUsers = dataSnapshot.childrenCount
@@ -43,6 +46,18 @@ class AdminPerformance : AppCompatActivity() {
                 totalCompanies = dataSnapshot.childrenCount
                 val textView13 = findViewById<TextView>(R.id.textView13)
                 textView13.text = "$totalCompanies"
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e(TAG, "Failed to read value.", error.toException())
+            }
+        })
+
+        dbRef2.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                totalPosts = dataSnapshot.childrenCount
+                val textView9 = findViewById<TextView>(R.id.textView9)
+                textView9.text = "$totalPosts"
             }
 
             override fun onCancelled(error: DatabaseError) {
