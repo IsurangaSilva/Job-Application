@@ -65,8 +65,7 @@
         android:layout_width="190dp"
         android:layout_height="149dp"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/profile"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,11 +74,15 @@
         android:layout_width="355dp"
         android:layout_height="46dp"
 
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -123,26 +126,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <Button
-        android:id="@+id/update12"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="280dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="@color/btn_blue"
-        android:text="Update"
+        android:text="Edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="0dp"
-        android:background="@color/btn_blue"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>

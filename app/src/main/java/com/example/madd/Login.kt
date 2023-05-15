@@ -48,7 +48,7 @@ class Login : AppCompatActivity() {
                     if (it.isSuccessful) {
                         val intent = when (uType) {
 
-                            "User" -> Intent(this, MainActivity::class.java)
+                            "User" -> Intent(this,RecyclerViewActivity::class.java)
                            
                             "Company" -> Intent(this, Dashboard_company::class.java)
                             else -> Intent(this, AdminHome::class.java)

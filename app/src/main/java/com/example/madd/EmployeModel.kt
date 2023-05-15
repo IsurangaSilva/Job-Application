@@ -2,7 +2,7 @@ package com.example.madd
 
 data class EmployeModel(
 
-    var empId :String?=null,
+
     var empName :String?=null,
     var empJobTitle :String?=null,
     var empEducation :String?=null,

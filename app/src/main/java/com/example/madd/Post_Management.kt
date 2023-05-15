@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.drawerlayout.widget.DrawerLayout
-import com.example.madd.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
+
 
 class Post_Management :  AppCompatActivity() {
 

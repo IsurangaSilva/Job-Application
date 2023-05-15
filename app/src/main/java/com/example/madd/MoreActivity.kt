@@ -21,7 +21,7 @@ class MoreActivity : AppCompatActivity() {
         btnLogout = findViewById(R.id.Logout)
 
         btnViewProfile.setOnClickListener {
-            val intent = Intent(this,FetchingActivity::class.java)
+            val intent = Intent(this,EmployeeDetailsActivity::class.java)
             startActivity(intent)
         }
 
