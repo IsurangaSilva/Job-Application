@@ -13,6 +13,29 @@
         android:theme="@style/Theme.MADD"
         tools:targetApi="31">
         <activity
+            android:name=".fetchingUserJObs"
+            android:exported="false"/>
+<!--            <meta-data-->
+<!--                android:name="android.app.lib_name"-->
+<!--                android:value="" />-->
+
+        <activity
+            android:name=".UserJobDetails"
+            android:exported="false"/>
+<!--            <meta-data-->
+<!--                android:name="android.app.lib_name"-->
+<!--                android:value="" />-->
+
+        <activity
+            android:name=".CompanyJobDetails"
+            android:exported="false" />
+        <activity
+            android:name=".FetchingList"
+            android:exported="false" />
+        <activity
+            android:name=".InsertJobList"
+            android:exported="false" />
+        <activity
             android:name=".RecyclerViewActivity"
             android:exported="true"/>
         <activity
@@ -25,9 +48,7 @@
         <activity
             android:name=".CompanyMain"
             android:exported="false" /> <!-- Perera -->
-        <activity
-            android:name=".Addpayment"
-            android:exported="false" />
+
         <activity
             android:name=".Dashboard_company"
             android:exported="false" />
