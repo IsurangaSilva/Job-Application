@@ -43,6 +43,6 @@ class UserAdapter (private val empList: ArrayList<EmployeModel>):
                 clickListener.onItemClick(adapterPosition)
             }
         }
-        }
-
     }
+
+}
